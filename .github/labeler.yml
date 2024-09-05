@@ -5,13 +5,6 @@ ci/cd:
   - 'Dockerfile'
   - 'compose.yaml'
 
-configs:
-  - 'configs/*'
-
-template:
-  - '.github/Auto_Pull_Request.md'
-  - '.github/Auto_Issue_Template.md'
-
 Dockerfile:
   - 'Dockerfile'
 
@@ -20,7 +13,7 @@ dotfiles:
   - '.gitignore'
   - '.gitattributes'
   - '.dockerignore'
-  - '.npmrc'
+  - 'CODEOWNERS'
   - 'Dockerfile'
   - 'LICENSE'
   - 'package-*.json'
@@ -33,4 +26,25 @@ markdown:
 devcontainer:
   - '.devcontainer/*'
 
+testing:
+  - 'Testing/*
+
+others:
+  - 'Others/*'
+
+integration:
+  - 'Integration/*'
+
+concurrency:
+  - 'Concurrency/*'
+
+basic:
+  - 'Basic/*'
+
+automation:
+  - 'Automation/*'
+
+advanced:
+  - 'Advanced/*'
+  
 # ** DO NOT MODIFY **
