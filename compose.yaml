@@ -1,0 +1,8 @@
+#####################################################
+# All Rights Reserved. 2022 - Present. (offensive-vk)
+#####################################################
+services:
+  debian-container:
+    build: .
+    container_name: Awesome_Actions 
+    tty: true

@@ -1,0 +1,30 @@
+{
+    "name": "AwesomeActions",
+    "version": "1.0.0",
+    "description": "Everything Relating to CI/CD Using Github Actions. Learn Github Actions.",
+    "scripts": {
+      "test": "echo Tests are turned off.",
+      "build": "echo Builds are turned off.",
+      "source": "https://github.com/offensive-vk/offensive-vk",
+      "hello": "sleep 5; echo 'My Container says Hello !'",
+      "dev": "sleep 5; echo 'Development Server Started... A Joke.' ",
+      "image": "docker build -t awesomeactions ."
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/offensive-vk/AwesomeActions.git"
+    },
+    "keywords": [
+        "Github Actions",
+        "Actions",
+        "GH Actions",
+        "CI/CD",
+        "Docker"
+    ],
+    "author": "Vedansh <https://github.com/offensive-vk/>",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/offensive-vk/AwesomeActions/issues"
+    },
+    "homepage": "https://github.com/offensive-vk/AwesomeActions#readme"
+  }
