@@ -32,18 +32,24 @@ jobs:
           const body = issue.body ? issue.body.toLowerCase() : '';
 
           const labelMapping = [
-            {label: 'ci/cd', match: ['ci/cd', 'pipeline', 'workflow', '.yml', 'dockerfile', '*.yml', '.github/workflows/*.yml', 'dockerfile', 'compose.yaml']},
-            {label: 'template', match: ['.github/auto_pull_request.md', '.github/auto_issue_template.md']},
+            {label: 'ci/cd', match: ['ci/cd', 'pipeline', 'workflow', '.yml', 'dockerfile', 'compose.yaml']},
+            {label: 'dockerfile', match: ['dockerfile']},
             {label: 'dotfiles', match: ['.gitlab-ci.yml', '.gitignore', '.gitattributes', '.dockerignore', 'dockerfile', 'license', 'package.json', 'pnpm-lock.yaml']},
-            {label: 'markdown', match: ['markdown','**/*.md', './**/*']},
-            {label: 'devcontainer', match: ['.devcontainer/*', '*.json']},
+            {label: 'markdown', match: ['markdown','**/*.md']},
+            {label: 'devcontainer', match: ['.devcontainer/*']},
+            {label: 'testing', match: ['testing/*']},
+            {label: 'others', match: ['others/*']},
+            {label: 'integration', match: ['integration/*']},
+            {label: 'concurrency', match: ['concurrency/*']},
+            {label: 'basic', match: ['basic/*']},
+            {label: 'automation', match: ['automation/*']},
+            {label: 'advanced', match: ['advanced/*']},
             {label: 'enhancement', match: ['feature', 'improve', 'updated', 'update']},
             {label: 'question', match: ['?', 'question', 'please', 'help']},
             {label: 'schedule', match: ['schedule', 'daily', 'automate', 'hamster', 'ci', 'cd']},
             {label: 'boss', match: ['og', 'boss', 'admin', 'devops', 'final-boss']},
-            {label: 'configs', match: ['configs', 'vscode', 'extensions.txt']}
-            {label: 'workflow', match: ['yaml', 'yml', 'yaml/**/*', '**/*.yml', '**/*.yaml', '.github/*.yml', '.github/workflows/*.yml']},
-            {label: 'yml', match: ['yaml', 'yml','yaml/**/*', '**/*.yml', '**/*.yaml', '.github/*.yml', '.github/workflows/*.yml']}
+            {label: 'configs', match: ['configs', 'vscode', 'extensions.txt']},
+            {label: 'workflow', match: ['yaml', 'yml', '**/*.yml', '**/*.yaml', '.github/*.yml', '.github/workflows/*.yml']}
           ];
 
           let matched = false;
