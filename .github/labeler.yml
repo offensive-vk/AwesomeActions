@@ -27,7 +27,7 @@ devcontainer:
   - '.devcontainer/*'
 
 testing:
-  - 'Testing/*
+  - 'Testing/*'
 
 others:
   - 'Others/*'
