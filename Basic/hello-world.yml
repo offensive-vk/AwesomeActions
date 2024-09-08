@@ -1,0 +1,10 @@
+name: Hello Actions !
+
+on: [push]
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say It
+        run: echo "Hello, World!"

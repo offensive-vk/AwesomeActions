@@ -1,4 +1,4 @@
-name: Automated Label - Hamster 🐹
+name: Automated Label
 
 on: 
   schedule:

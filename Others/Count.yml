@@ -1,0 +1,34 @@
+name: Count Text
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  count-text:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Count text in directories
+        id: count-directories
+        run: |
+          find . -type d -print0 | while IFS= read -r -d $'\0' dir; do
+            echo "$dir: $(find "$dir" -type f -print0 | wc -l)" >> directory-counts.txt
+          done
+
+      - name: Count text in files
+        id: count-files
+        run: |
+          find . -type f -print0 | while IFS= read -r -d $'\0' file; do
+            echo "$file: $(wc -l < "$file")" >> file-counts.txt
+          done
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: 'Update text counts'
+          file_pattern: '*.txt'

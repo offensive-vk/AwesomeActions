@@ -1,0 +1,76 @@
+name: Advanced - Build, Test, Deploy
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  fetch-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Get repository data
+        id: repo-data
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.repos.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            }).then(response => {
+              console.log(JSON.stringify(response.data))
+              return response.data
+            })
+        
+      - name: Print repository data
+        run: |
+          echo "Repository name: ${{ steps.repo-data.outputs.repo_name }}"
+          echo "Repository description: ${{ steps.repo-data.outputs.repo_description }}"
+
+  build:
+    runs-on: ubuntu-latest
+    needs: fetch-data
+    strategy:
+      matrix:
+        node-version: [ 18.x, 20.x, 22.x ]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm install
+      - name: Build project
+        run: npm run build
+        if: ${{ github.ref == 'refs/heads/main' }}
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run Tests
+        run: npm run test
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Deploy to production
+        run: |
+          echo "Deploying to production..."
