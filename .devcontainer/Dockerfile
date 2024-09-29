@@ -17,7 +17,6 @@ SHELL ["/bin/bash", "-c"]
 RUN apt-get update && apt-get install -y \
     curl \
     wget \
-    vim \
     htop \
     neofetch \
     && apt-get clean \

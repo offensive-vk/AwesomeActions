@@ -1,7 +1,7 @@
 {
     "name": "AwesomeActions",
-    "version": "1.0.0",
-    "description": "Everything Relating to CI/CD Using Github Actions. Learn Github Actions.",
+    "version": "5.0.0",
+    "description": "Everything Relating to CI/CD Using Github Actions. Learn Github Actions. TODAY!",
     "scripts": {
       "test": "echo Tests are turned off.",
       "build": "echo Builds are turned off.",

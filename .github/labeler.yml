@@ -1,50 +1,71 @@
-# ** DO NOT MODIFY **
 ci/cd:
-  - '*.yml'
-  - '.github/workflows/*.yml'
-  - 'Dockerfile'
-  - 'compose.yaml'
+  - changed-files:
+      - any-glob-to-any-file:
+          - '*.yml'
+          - '.github/workflows/*.yml'
+          - 'Dockerfile'
+          - 'compose.yaml'
 
 Dockerfile:
-  - 'Dockerfile'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'Dockerfile'
 
 dotfiles:
-  - '.gitlab-ci.yml'
-  - '.gitignore'
-  - '.gitattributes'
-  - '.dockerignore'
-  - 'CODEOWNERS'
-  - 'Dockerfile'
-  - 'LICENSE'
-  - 'package-*.json'
-  - 'pnpm-lock.yaml'
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.gitlab-ci.yml'
+          - '.gitignore'
+          - '.gitattributes'
+          - '.dockerignore'
+          - 'CODEOWNERS'
+          - 'Dockerfile'
+          - 'LICENSE'
+          - 'package-*.json'
+          - 'pnpm-lock.yaml'
 
 markdown:
-  - '**/*.md'
-  - './**/*.md'
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.md'
+          - './**/*.md'
 
 devcontainer:
-  - '.devcontainer/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.devcontainer/*'
 
 testing:
-  - 'Testing/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'Testing/*'
 
 others:
-  - 'Others/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'Others/*'
 
 integration:
-  - 'Integration/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'Integration/*'
 
 concurrency:
-  - 'Concurrency/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'Concurrency/*'
 
 basic:
-  - 'Basic/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'Basic/*'
 
 automation:
-  - 'Automation/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'Automation/*'
 
 advanced:
-  - 'Advanced/*'
-  
-# ** DO NOT MODIFY **
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'Advanced/*'

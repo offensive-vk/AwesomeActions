@@ -1,4 +1,4 @@
-name: Auto Add to Project
+name: CI / Add to Project
 
 on:
   issues:
@@ -10,7 +10,7 @@ jobs:
   add_to_project:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Add issue/PR to project

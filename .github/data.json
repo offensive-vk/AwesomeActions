@@ -1,8 +1,10 @@
 {
     "data": "false",
+    "isAwesome": true,
     "branch": "master",
     "path": "../",
     "gh-actions": true,
     "docker": "Docker.io",
+    "ghcr": "ghcr.io",
     "workflow_dir": ".github/workflows/"
 }
