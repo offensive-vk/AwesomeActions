@@ -14,7 +14,7 @@ GitHub is a provider of Internet hosting for software development and version co
 
 Github Actions helps you Automate, customize, and execute your software development workflows right in your repository with GitHub Actions. You can discover, create, and share actions to perform any job you’d like, including CI/CD, and combine actions in a completely customized workflow.
 
-Learn more at their official website - [Github Actions](https://github.com/features/actions). 
+Learn more at their official website - [Github Actions](https://github.com/features/actions)
 
 ## Quick Links and Navigation 🧭
 
